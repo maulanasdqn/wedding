@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-Light.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-SemiBold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url("/fonts/Fredoka-Bold.ttf") format("truetype");
+  }
+}
