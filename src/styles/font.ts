@@ -6,4 +6,5 @@ export const fontFamily = {
   bold: ['"Fredoka"'],
   semibold: ['"Fredoka"'],
   regular: ['"Fredoka"'],
+  comebackHome: ['"Comback home Regular"'],
 };
