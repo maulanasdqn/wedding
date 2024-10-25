@@ -61,4 +61,12 @@
     font-variation-settings: "wdth" 100;
     src: url("/fonts/Fredoka-Bold.ttf") format("truetype");
   }
+
+  @font-face {
+    font-family: "Comback home Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Comback home Regular"),
+      url("/fonts/CombackHome-Regular.woff") format("woff");
+  }
 }
