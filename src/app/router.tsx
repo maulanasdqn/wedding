@@ -8,4 +8,8 @@ export const routes = createBrowserRouter([
     element: <MainLayout />,
     children: [...homeRoutes],
   },
+  {
+    path: "/invitation",
+    element: <h1>Hallo</h1>,
+  },
 ]);
