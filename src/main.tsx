@@ -3,13 +3,14 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import "./styles/global.css";
 import { routes } from "./app/router";
+import { HomeBannerLoading } from "./app/home/loading";
 
 const root = createRoot(document.getElementById("root")!);
 
 root.render(
   <StrictMode>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<HomeBannerLoading />}>
       <RouterProvider router={routes} />
     </Suspense>
-  </StrictMode>,
+  </StrictMode>
 );

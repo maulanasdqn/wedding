@@ -22,9 +22,17 @@ export const CouplesName: FC = (): ReactElement => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6 }}
-        className={cn(fontStyle, "place-self-start text-red-500")}
+        className={cn(fontStyle, "text-yellow-500")}
       >
         Maulana
+      </motion.h1>
+      <motion.h1
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.6 }}
+        className={cn(fontStyle, "text-yellow-500 text-2xl py-2")}
+      >
+        &
       </motion.h1>
       <motion.h1
         variants={getNameVariants("right")}
