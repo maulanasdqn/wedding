@@ -1,7 +1,9 @@
+import { SplashScreen } from "@/components/ui/splash";
 import { useEffect, useState, type FC, type ReactElement } from "react";
 import { Outlet } from "react-router-dom";
 
-export const MainLayout: FC = (): ReactElement => {
+
+export const InvitationLayout: FC = (): ReactElement => {
   const loadTimeOut = 4;
   const [loadPage, setLoadPage] = useState(false);
 
@@ -13,7 +15,7 @@ export const MainLayout: FC = (): ReactElement => {
 
   return (
     <main className="flex flex-col items-start justify-start min-h-screen bg-primary">
-      <Outlet />
+      { loadPage ? <Outlet /> : <SplashScreen loadTimeOut={3} /> }
     </main>
   );
 };

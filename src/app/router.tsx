@@ -1,15 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import { homeRoutes } from "./home/router";
-import { MainLayout } from "@/components/ui/layouts/main";
+import { rootRoutes } from "./root/router";
+import { ROUTE_URL } from "@/entities/constants/route-url";
+import { invitationRoutes } from "./invitation/router";
+import { RootLayout } from "./root/layout";
+import { InvitationLayout } from "./invitation/layout";
 
 export const routes = createBrowserRouter([
   {
-    path: "/",
-    element: <MainLayout />,
-    children: [...homeRoutes],
+    path: ROUTE_URL.ROOT,
+    element: <RootLayout />,
+    children: [...rootRoutes],
   },
   {
-    path: "/invitation",
-    element: <h1>Hallo</h1>,
-  },
+    path: ROUTE_URL.INVITATION,
+    element: <InvitationLayout />,
+    children: [...invitationRoutes],
+  }
 ]);
