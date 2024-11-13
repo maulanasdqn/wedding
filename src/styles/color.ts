@@ -1,4 +1,7 @@
 export const colors = {
+  white: {
+    DEFAULT: "#ffffff",
+  },
   red: {
     100: "#F8AAAD",
     200: "#F47B7F",
