@@ -13,8 +13,14 @@ export const RootLayout: FC = (): ReactElement => {
   }, [loadPage, setLoadPage, parseLoad]);
 
   return (
-    <main className="flex flex-col items-start justify-start min-h-screen h-full bg-red-600">
-      {loadPage ? <Outlet /> : <RootLoading />}
+    <main className="flex flex-col justify-center items-center h-full bg-red-600 px-0">
+      {loadPage ? (
+        <section className="w-full min-h-screen h-full max-w-[425px] bg-red-600">
+          <Outlet />
+        </section>
+      ) : (
+        <RootLoading />
+      )}
     </main>
   );
 };

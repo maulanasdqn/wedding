@@ -13,9 +13,9 @@ export const Greeting: FC = (): ReactElement => {
         opacity: 1,
       }}
       transition={{ duration: 0.9 }}
-      className="text-center px-4 md:px-36 lg:px-40 xl:px-80"
+      className="text-center px-4"
     >
-      <p className="text-sm text-white md:text-base lg:text-lg xl:text-xl leading-5">
+      <p className="text-base text-white leading-5">
         Kami dengan tulus mengundang Bapak/Ibu/Saudara/i untuk menjadi saksi
         kebahagiaan kami di hari pernikahan.
       </p>

@@ -13,8 +13,14 @@ export const InvitationLayout: FC = (): ReactElement => {
   }, [loadPage, setLoadPage, parseLoad]);
 
   return (
-    <main className="flex flex-col items-start justify-start min-h-screen bg-primary">
-      {loadPage ? <Outlet /> : <SplashScreen loadTimeOut={3} />}
+    <main className="flex flex-col justify-center items-center h-full bg-white px-0">
+      {loadPage ? (
+        <section className="w-full max-w-[425px] bg-white p-4">
+          <Outlet />
+        </section>
+      ) : (
+        <SplashScreen loadTimeOut={3} />
+      )}
     </main>
   );
 };

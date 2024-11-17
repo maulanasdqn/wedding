@@ -12,11 +12,10 @@ export const CouplesName: FC = (): ReactElement => {
     visible: { x: 0, opacity: 1, rotate: -10 },
   });
 
-  const fontStyle =
-    "font-comebackHome text-7xl md:text-8xl lg:text-9xl -rotate-6";
+  const fontStyle = "font-comebackHome text-6xl -rotate-6";
 
   return (
-    <div className="flex flex-col justify-center items-center -space-y-6 w-full px-6 md:px-36 lg:px-40 xl:px-80">
+    <div className="flex flex-col gap-y-4 justify-center items-center -space-y-6 w-full px-6">
       <motion.h1
         variants={getNameVariants("left")}
         initial="hidden"
@@ -30,7 +29,7 @@ export const CouplesName: FC = (): ReactElement => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.6 }}
-        className={cn(fontStyle, "text-yellow-500 text-2xl py-2")}
+        className={cn(fontStyle, "text-yellow-500 text-3xl py-2")}
       >
         &
       </motion.h1>
@@ -39,7 +38,7 @@ export const CouplesName: FC = (): ReactElement => {
         initial="hidden"
         animate="visible"
         transition={{ duration: 0.7 }}
-        className={cn(fontStyle, "place-self-end text-yellow-500")}
+        className={cn(fontStyle, "text-yellow-500")}
       >
         Fenny
       </motion.h1>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { FC, ReactElement } from "react";
 
 export const TheWeddingBar: FC = (): ReactElement => {
-  const fontStyle = "font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl";
+  const fontStyle = "font-bold text-xl";
 
   return (
     <motion.div
@@ -22,10 +22,10 @@ export const TheWeddingBar: FC = (): ReactElement => {
         <div
           className={cn(
             fontStyle,
-            "bg-gray-500 text-white px-4 py-3 tracking-wide"
+            "bg-gray-500 text-white px-4 py-3 tracking-wide",
           )}
         >
-          THE
+          INTIMATE
         </div>
         <div className="flex flex-col items-center">
           <div className="w-full h-1 bg-gray-500 mb-2"></div>
