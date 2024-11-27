@@ -15,7 +15,7 @@ export const InvitationLayout: FC = (): ReactElement => {
   return (
     <main className="flex flex-col justify-center items-center h-full bg-white px-0">
       {loadPage ? (
-        <section className="w-full max-w-[425px] bg-white p-4">
+        <section className="w-full max-w-[425px] bg-white p-4 flex flex-col gap-y-8">
           <Outlet />
         </section>
       ) : (
