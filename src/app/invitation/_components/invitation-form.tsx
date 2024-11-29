@@ -1,36 +1,36 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { InputText } from "@/components/ui/inputs/text";
-import { TextArea } from "@/components/ui/inputs/text-area";
-import { AudioRecorder } from "react-audio-voice-recorder";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { Select } from "@/components/ui/inputs/select";
+import { useForm, Controller } from "react-hook-form";
+import { FC, Suspense, useState } from "react";
+import { lazily } from "react-lazily";
+import type { TFormInputs, TSubmittedData } from "../_entities/type";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { schemaInvitation } from "../_entities/schema";
+import { InvitationFormSkeleton } from "../loading";
+const { Button } = lazily(() => import("@/app/_components/ui/button"));
+const { InputText } = lazily(() => import("@/app/_components/ui/inputs/text"));
+const { TextArea } = lazily(
+  () => import("@/app/_components/ui/inputs/text-area"),
+);
+const { Select } = lazily(() => import("@/app/_components/ui/inputs/select"));
+const { AudioRecorder } = lazily(() => import("react-audio-voice-recorder"));
 
-type FormInputs = {
-  fullname: string;
-  greeting: string;
-  attendence: string;
-  audio: string;
-};
-
-type SubmittedData = {
-  fullname: string;
-  greeting: string;
-  attendence: string;
-  audio: string | null;
-};
-
-export const InvitationForm: React.FC = () => {
-  const { control, handleSubmit, setValue, watch, reset } = useForm<FormInputs>(
-    {
-      defaultValues: {
-        fullname: "",
-        greeting: "",
-        audio: "",
-        attendence: "",
-      },
+export const InvitationForm: FC = () => {
+  const {
+    control,
+    handleSubmit,
+    setValue,
+    watch,
+    reset,
+    formState: { isValid, errors },
+  } = useForm<TFormInputs>({
+    resolver: zodResolver(schemaInvitation),
+    mode: "all",
+    defaultValues: {
+      fullname: "",
+      greeting: "",
+      audio: "",
+      attendence: "",
     },
-  );
+  });
 
   const attendenceOptions = [
     {
@@ -44,7 +44,7 @@ export const InvitationForm: React.FC = () => {
     },
   ];
 
-  const [submittedData, setSubmittedData] = useState<SubmittedData | null>(
+  const [submittedData, setSubmittedData] = useState<TSubmittedData | null>(
     null,
   );
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
@@ -57,7 +57,7 @@ export const InvitationForm: React.FC = () => {
     setAudioBlob(blob);
   };
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+  const onSubmit = handleSubmit((data) => {
     const formData = new FormData();
     formData.append("fullname", data.fullname);
     formData.append("greeting", data.greeting);
@@ -78,61 +78,68 @@ export const InvitationForm: React.FC = () => {
     });
 
     reset({});
-  };
+  });
 
   return (
-    <section className="flex flex-col">
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-4">
-        <InputText
-          required
-          placeholder="Masukkan Nama Lengkap"
-          control={control}
-          name="fullname"
-          label="Nama Lengkap"
-        />
-        <Select
-          options={attendenceOptions}
-          control={control}
-          name="attendence"
-          label="Kehadiran"
-        />
-        <TextArea
-          required
-          placeholder="Masukkan Ucapan"
-          control={control}
-          name="greeting"
-          label="Ucapan"
-        />
-        <Controller
-          name="audio"
-          control={control}
-          render={({ fieldState: { error } }) => (
-            <div className="flex flex-col gap-y-1">
-              <span>Ucapan dengan VN</span>
-              <AudioRecorder
-                onRecordingComplete={handleRecordingComplete}
-                downloadOnSavePress
-                downloadFileExtension="webm"
-                mediaRecorderOptions={{
-                  audioBitsPerSecond: 128000,
-                }}
-              />
-              {error && (
-                <p className="text-red-500 text-sm mt-1">{error.message}</p>
-              )}
+    <section className="flex flex-col bg-gray-50 p-4 rounded-lg w-full">
+      <form onSubmit={onSubmit} className="flex flex-col gap-y-4">
+        <Suspense fallback={<InvitationFormSkeleton />}>
+          <InputText
+            required
+            message={errors.fullname?.message}
+            placeholder="Masukkan Nama Lengkap"
+            control={control}
+            name="fullname"
+            label="Nama Lengkap"
+          />
+          <Select
+            message={errors.attendence?.message}
+            options={attendenceOptions}
+            control={control}
+            name="attendence"
+            label="Kehadiran"
+          />
+          <TextArea
+            message={errors.greeting?.message}
+            required
+            placeholder="Masukkan Ucapan"
+            control={control}
+            name="greeting"
+            label="Ucapan"
+          />
+          <Controller
+            name="audio"
+            control={control}
+            render={({ fieldState: { error } }) => (
+              <div className="flex flex-col gap-y-1">
+                <span>Ucapkan dengan VN</span>
+                <AudioRecorder
+                  onRecordingComplete={handleRecordingComplete}
+                  downloadOnSavePress
+                  downloadFileExtension="webm"
+                  mediaRecorderOptions={{
+                    audioBitsPerSecond: 128000,
+                  }}
+                />
+                {error && (
+                  <p className="text-red-500 text-sm mt-1">{error.message}</p>
+                )}
+              </div>
+            )}
+          />
+          {audioValue && (
+            <div className="mt-2">
+              <p className="font-semibold">Audio Preview:</p>
+              <audio controls className="mt-1">
+                <source src={audioValue} type="audio/webm" />
+                Your browser does not support the audio element.
+              </audio>
             </div>
           )}
-        />
-        {audioValue && (
-          <div className="mt-2">
-            <p className="font-semibold">Audio Preview:</p>
-            <audio controls className="mt-1">
-              <source src={audioValue} type="audio/webm" />
-              Your browser does not support the audio element.
-            </audio>
-          </div>
-        )}
-        <Button type="submit">Kirim Ucapan</Button>
+          <Button disabled={!isValid} type="submit">
+            Kirim Ucapan
+          </Button>
+        </Suspense>
       </form>
 
       {submittedData && (

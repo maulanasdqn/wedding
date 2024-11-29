@@ -1,5 +1,11 @@
 import { SplashScreen } from "./loading";
-import { useEffect, useState, type FC, type ReactElement } from "react";
+import {
+  Fragment,
+  useEffect,
+  useState,
+  type FC,
+  type ReactElement,
+} from "react";
 import { Outlet } from "react-router-dom";
 
 export const InvitationLayout: FC = (): ReactElement => {
@@ -13,11 +19,13 @@ export const InvitationLayout: FC = (): ReactElement => {
   }, [loadPage, setLoadPage, parseLoad]);
 
   return (
-    <main className="flex flex-col justify-center items-center h-full bg-white px-0">
+    <main className="flex flex-col justify-center min-h-screen items-center h-full w-full bg-red-600">
       {loadPage ? (
-        <section className="w-full max-w-[425px] bg-white p-4 flex flex-col gap-y-8">
-          <Outlet />
-        </section>
+        <Fragment>
+          <main className="flex flex-col gap-y-6 w-full p-6">
+            <Outlet />
+          </main>
+        </Fragment>
       ) : (
         <SplashScreen loadTimeOut={3} />
       )}

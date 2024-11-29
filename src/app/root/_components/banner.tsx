@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import type { FC, ReactElement } from "react";
+import { Button } from "@/app/_components/ui/button";
 import { motion } from "framer-motion";
 import { CouplesName } from "./couple-name";
 import { ImageBanner } from "./image-banner";

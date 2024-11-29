@@ -26,3 +26,34 @@ export const SplashScreen: FC<{ loadTimeOut: number }> = ({
     </motion.div>
   );
 };
+
+export const InvitationFormSkeleton: FC = (): ReactElement => {
+  return (
+    <section className="flex flex-col bg-gray-50 p-4 rounded-lg w-full animate-pulse">
+      <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-1">
+          <div className="h-5 w-1/4 bg-gray-300 rounded-md"></div>
+          <div className="h-10 w-full bg-gray-300 rounded-md"></div>
+        </div>
+        <div className="flex flex-col gap-y-1">
+          <div className="h-5 w-1/4 bg-gray-300 rounded-md"></div>
+          <div className="h-10 w-full bg-gray-300 rounded-md"></div>
+        </div>
+        <div className="flex flex-col gap-y-1">
+          <div className="h-5 w-1/4 bg-gray-300 rounded-md"></div>
+          <div className="h-20 w-full bg-gray-300 rounded-md"></div>
+        </div>
+        <div className="flex flex-col gap-y-1">
+          <div className="h-5 w-1/4 bg-gray-300 rounded-md"></div>
+          <div className="h-10 w-full bg-gray-300 rounded-md"></div>
+        </div>
+        <div className="h-10 w-full bg-gray-300 rounded-md"></div>
+      </div>
+      <div className="mt-6 p-4 border border-gray-300 rounded-md">
+        <div className="h-5 w-1/3 bg-gray-300 rounded-md mb-2"></div>
+        <div className="h-5 w-2/3 bg-gray-300 rounded-md mb-2"></div>
+        <div className="h-5 w-1/2 bg-gray-300 rounded-md"></div>
+      </div>
+    </section>
+  );
+};

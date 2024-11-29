@@ -11,7 +11,6 @@ export const CouplesName: FC = (): ReactElement => {
     },
     visible: { x: 0, opacity: 1, rotate: -10 },
   });
-
   const fontStyle = "font-comebackHome text-6xl -rotate-6";
 
   return (
