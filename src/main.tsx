@@ -17,6 +17,7 @@ root.render(
           height: "100vh",
         }}
         color="#f2b600"
+        snowflakeCount={50}
       />
 
       <RouterProvider router={routes} />
