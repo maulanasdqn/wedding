@@ -21,7 +21,7 @@ export const InvitationCountdown: FC<TCountdownProps> = (
   }
 
   return (
-    <div className="flex gap-x-4 text-center px-4">
+    <div className="flex justify-center text-center px-2">
       <TimeBox label="Days" value={timeLeft.days} />
       <TimeBox label="Hours" value={timeLeft.hours} />
       <TimeBox label="Minutes" value={timeLeft.minutes} />
@@ -31,8 +31,8 @@ export const InvitationCountdown: FC<TCountdownProps> = (
 };
 
 const TimeBox: FC<TTimeBoxProps> = (props): ReactElement => (
-  <div className="flex flex-col items-center justify-center bg-gray-800 text-white rounded-lg px-4 py-2 min-w-[60px] min-h-[60px] mb-6">
-    <span className="text-4xl font-mono w-full">{props.value}</span>
+  <div className="flex flex-col items-center justify-center bg-yellow-400 text-white px-1 py-2 min-h-[60px] mb-6">
+    <span className="text-2xl md:text-4xl font-mono w-full">{props.value}</span>
     <span className="text-sm uppercase tracking-wide w-full">
       {props.label}
     </span>

@@ -13,9 +13,9 @@ export const RootLayout: FC = (): ReactElement => {
   }, [loadPage, setLoadPage, parseLoad]);
 
   return (
-    <main className="flex flex-col justify-center items-center h-full bg-red-600 px-0">
+    <main className="flex flex-col justify-center items-center h-screen bg-red-600 px-0">
       {loadPage ? (
-        <section className="w-full min-h-screen h-full max-w-[425px] bg-red-600">
+        <section className="w-full h-screen max-w-[425px] overflow-y-hidden bg-red-600">
           <Outlet />
         </section>
       ) : (

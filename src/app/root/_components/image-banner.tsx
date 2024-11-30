@@ -15,7 +15,7 @@ export const ImageBanner: FC = (): ReactElement => {
       transition={{ duration: 0.8 }}
       className="relative"
     >
-      <img src="/animasi.png" alt="animasi" />
+      <img src="/animasi.png" alt="animasi" width={250} />
     </motion.div>
   );
 };

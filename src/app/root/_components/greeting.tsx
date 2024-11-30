@@ -15,7 +15,7 @@ export const Greeting: FC = (): ReactElement => {
       transition={{ duration: 0.9 }}
       className="text-center px-4"
     >
-      <p className="text-base text-white leading-5">
+      <p className="text-sm text-white leading-5">
         Kami dengan tulus mengundang Bapak/Ibu/Saudara/i untuk menjadi saksi
         kebahagiaan kami di hari pernikahan.
       </p>

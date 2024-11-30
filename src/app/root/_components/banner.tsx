@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 export const RootBanner: FC = (): ReactElement => {
   return (
-    <section className="flex flex-col w-full py-12 bg-red-600">
-      <div className="flex flex-col justify-center items-center gap-y-6">
+    <section className="flex flex-col w-full h-screen py-12 bg-red-600">
+      <div className="flex flex-col justify-center items-center">
         <TheWeddingBar />
         <CouplesName />
         <ImageBanner />

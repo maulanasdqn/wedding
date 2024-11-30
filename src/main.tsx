@@ -18,6 +18,7 @@ root.render(
         }}
         color="#f2b600"
       />
+
       <RouterProvider router={routes} />
     </div>
   </StrictMode>,

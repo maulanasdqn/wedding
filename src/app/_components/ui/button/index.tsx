@@ -5,7 +5,7 @@ export const Button: FC<TButton> = (props): ReactElement => {
   return (
     <button
       {...props}
-      className="bg-yellow-600 text-white rounded-full p-2 disabled:opacity-50"
+      className="bg-gray-500 text-white rounded-md p-2 my-4 disabled:opacity-50"
     >
       {props.children}
     </button>
