@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export const RootBanner: FC = (): ReactElement => {
   return (
-    <section className="flex flex-col w-full h-screen py-12 bg-[url('/bg.svg')] bg-cover bg-center">
+    <section className="flex flex-col w-full h-screen justify-center items-center bg-[url('/bg.svg')] bg-cover bg-center">
       <div className="flex flex-col justify-center items-center">
         <TheWeddingBar />
         <CouplesName />
