@@ -16,8 +16,8 @@ export const Greeting: FC = (): ReactElement => {
       className="text-center px-4"
     >
       <p className="text-sm text-white leading-5">
-        Kami dengan tulus mengundang Bapak/Ibu/Saudara/i untuk menjadi saksi
-        kebahagiaan kami di hari pernikahan.
+        Dengan undangan ini kami ingin mengabarkan dan membagikan kabar
+        kebahagiaan kami.
       </p>
     </motion.div>
   );

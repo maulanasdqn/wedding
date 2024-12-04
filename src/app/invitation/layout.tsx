@@ -19,10 +19,10 @@ export const InvitationLayout: FC = (): ReactElement => {
   }, [loadPage, setLoadPage, parseLoad]);
 
   return (
-    <main className="flex flex-col justify-center min-h-screen items-center h-full w-full bg-red-600">
+    <main className="flex flex-col justify-center items-center h-full bg-red-600 px-0">
       {loadPage ? (
         <Fragment>
-          <main className="flex flex-col gap-y-6 w-full p-6">
+          <main className="flex flex-col justify-center items-center max-w-[625px] gap-y-6 py-6">
             <Outlet />
           </main>
         </Fragment>
