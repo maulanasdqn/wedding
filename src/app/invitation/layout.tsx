@@ -22,10 +22,6 @@ export const InvitationLayout: FC = (): ReactElement => {
     <main className="flex flex-col justify-center items-center h-full bg-red-600 px-0">
       {loadPage ? (
         <Fragment>
-          <audio autoPlay>
-            <source src="/lagu-nikah.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
           <main className="flex flex-col justify-center items-center max-w-[625px] gap-y-6 py-6">
             <Outlet />
           </main>

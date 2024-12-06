@@ -6,6 +6,7 @@ import InvitationRoadmap from "./_components/invitation-roadmap";
 import MobileMenu from "../_components/ui/menu/menu-bar";
 import EventDetails from "./_components/invitation-detail";
 import InvitationGift from "./_components/invitation-gift";
+import FloatingControls from "../_components/ui/menu/floating-control";
 
 const { InvitationForm } = lazily(
   () => import("./_components/invitation-form"),
@@ -14,15 +15,14 @@ const { InvitationForm } = lazily(
 export const Component: FC = (): ReactElement => {
   return (
     <Suspense>
-      <div className="p-2">
-        <InvitationQuotes />
-        <InvitationRoadmap />
-        <InvitationView />
-        <EventDetails />
-        <InvitationGift />
-        <InvitationForm />
-        <MobileMenu />
-      </div>
+      <FloatingControls />
+      <InvitationQuotes />
+      <InvitationRoadmap />
+      <InvitationView />
+      <EventDetails />
+      <InvitationGift />
+      <InvitationForm />
+      <MobileMenu />
     </Suspense>
   );
 };
