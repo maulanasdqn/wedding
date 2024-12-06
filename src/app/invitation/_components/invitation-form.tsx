@@ -81,7 +81,10 @@ export const InvitationForm: FC = () => {
   });
 
   return (
-    <section className="flex flex-col bg-gray-50 p-4 my-4 rounded-lg w-full h-screen">
+    <section
+      id="rsvp"
+      className="flex flex-col bg-gray-50 p-4 my-4 rounded-lg w-full h-full"
+    >
       <form onSubmit={onSubmit} className="flex flex-col gap-y-4">
         <Suspense fallback={<InvitationFormSkeleton />}>
           <InputText

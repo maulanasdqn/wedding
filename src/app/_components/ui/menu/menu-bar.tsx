@@ -1,5 +1,12 @@
 import { FC, ReactElement } from "react";
-import { FiHome, FiHeart, FiUsers, FiCalendar, FiSend } from "react-icons/fi";
+import {
+  FiHome,
+  FiHeart,
+  FiUsers,
+  FiCalendar,
+  FiSend,
+  FiGift,
+} from "react-icons/fi";
 
 export const MobileMenu: FC = (): ReactElement => {
   const handleScrollTo = (id: string) => {
@@ -18,35 +25,42 @@ export const MobileMenu: FC = (): ReactElement => {
             className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
             onClick={() => handleScrollTo("home")}
           >
-            <FiHome className="text-2xl" />
+            <FiHome className="text-xl" />
             <span className="text-sm">Home</span>
           </li>
           <li
             className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
             onClick={() => handleScrollTo("journey")}
           >
-            <FiHeart className="text-2xl" />
+            <FiHeart className="text-xl" />
             <span className="text-sm">Cinta</span>
           </li>
           <li
             className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
             onClick={() => handleScrollTo("introduce")}
           >
-            <FiUsers className="text-2xl" />
+            <FiUsers className="text-xl" />
             <span className="text-sm">Mempelai</span>
           </li>
           <li
             className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
             onClick={() => handleScrollTo("event")}
           >
-            <FiCalendar className="text-2xl" />
+            <FiCalendar className="text-xl" />
             <span className="text-sm">Acara</span>
+          </li>
+          <li
+            className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
+            onClick={() => handleScrollTo("gift")}
+          >
+            <FiGift className="text-xl" />
+            <span className="text-sm">Gift</span>
           </li>
           <li
             className="flex flex-col items-center text-gray-800 cursor-pointer hover:text-red-600"
             onClick={() => handleScrollTo("rsvp")}
           >
-            <FiSend className="text-2xl" />
+            <FiSend className="text-xl" />
             <span className="text-sm">RSVP</span>
           </li>
         </ul>

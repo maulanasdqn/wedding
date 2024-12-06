@@ -7,7 +7,10 @@ const InvitationGift: FC = (): ReactElement => {
   >(null);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
+    <div
+      id="gift"
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4"
+    >
       <h1 className="text-3xl font-bold text-red-600 mb-8">Pilih Hadiah</h1>
       <div className="flex flex-col gap-3 mb-8">
         {/* Kotak Rekening */}

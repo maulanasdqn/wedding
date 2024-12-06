@@ -3,6 +3,7 @@ import { FC, ReactElement } from "react";
 const EventDetails: FC = (): ReactElement => {
   return (
     <div
+      id="event"
       className=" flex flex-col h-full min-h-screen gap-16 items-center justify-center bg-cover bg-center bg-contain text-white px-4"
       style={{ backgroundImage: "url('/bg-flower.png')" }}
     >
@@ -34,6 +35,13 @@ const EventDetails: FC = (): ReactElement => {
               Kanaya Food Court - Jl. Cikutra No.237, Neglasari, Kec. Cibeunying
               Kaler, Kota Bandung, Jawa Barat 40124
             </p>
+            <a href="https://www.google.com/maps/place/Kanaya+Food+Court/@-6.8932531,107.6355664,18z/data=!4m6!3m5!1s0x2e68e7a5abc8e9c3:0x16dbc3cec4a648b!8m2!3d-6.8935936!4d107.6359289!16s%2Fg%2F11b61qy3rh?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">
+              <div className="flex w-full justify-center">
+                <button className="p-2 rounded-md bg-red-500 my-2 text-white font-bold tex-2xl text-lg py-2 text-center">
+                  Cek Lokasi Disini{" "}
+                </button>
+              </div>
+            </a>
             <a href="https://www.google.com/maps/place/Kanaya+Food+Court/@-6.8932531,107.6355664,18z/data=!4m6!3m5!1s0x2e68e7a5abc8e9c3:0x16dbc3cec4a648b!8m2!3d-6.8935936!4d107.6359289!16s%2Fg%2F11b61qy3rh?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">
               {" "}
               <img src="/maps.png" alt="maps" />
