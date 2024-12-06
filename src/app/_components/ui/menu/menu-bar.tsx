@@ -1,15 +1,12 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, ReactElement } from "react";
 import { FiHome, FiHeart, FiUsers, FiCalendar, FiSend } from "react-icons/fi";
 
 export const MobileMenu: FC = (): ReactElement => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const handleScrollTo = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false); // Tutup menu setelah klik
   };
 
   return (

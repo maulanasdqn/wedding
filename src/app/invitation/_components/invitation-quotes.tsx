@@ -2,7 +2,7 @@ import { type FC, type ReactElement } from "react";
 
 export const InvitationQuotes: FC = (): ReactElement => {
   return (
-    <section className="flex flex-col items-center justify-center w-full h-screen ">
+    <section className="flex flex-col items-center justify-center w-full h-full min-h-screen ">
       <p className="text-center text-sm text-yellow-500">
         "Hawa tercipta di dunia untuk menemani sang Adam, begitu juga dirimu
         tercipta tuk temani aku"
