@@ -1,6 +1,6 @@
 import { type FC, type ReactElement } from "react";
 
-export const InvitationRoadmap: FC = (): ReactElement => {
+const InvitationRoadmap: FC = (): ReactElement => {
   return (
     <div className="bg-[#F9F5F0] py-10 px-6 flex flex-col items-center text-center">
       <h2 className="text-3xl font-bold text-[#800000] mb-6">

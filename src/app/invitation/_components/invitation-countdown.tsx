@@ -21,7 +21,7 @@ export const InvitationCountdown: FC<TCountdownProps> = (
   }
 
   return (
-    <section className="flex flex-col gap-y-4 justify-center items-center">
+    <section className="flex flex-col gap-y-4 justify-center items-center mt-12">
       <h1 className="text-center text-white text-3xl font-bold">
         Menuju Hari Kebahagiaan
       </h1>

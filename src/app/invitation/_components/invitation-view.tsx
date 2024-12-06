@@ -1,6 +1,8 @@
 import { type FC, type ReactElement } from "react";
+import { InvitationCountdown } from "./invitation-countdown";
 
 export const InvitationView: FC = (): ReactElement => {
+  const targetDate = new Date("2024-12-14T00:00:00");
   return (
     <section className="flex flex-col items-center justify-center h-full min-h-screen gap-y-4 p-2 w-full rounded-md text-yellow-300 text-3xl">
       <h1 className="text-yellow-500 font-bold">Bride & Groom</h1>
@@ -18,6 +20,7 @@ export const InvitationView: FC = (): ReactElement => {
       <p className="text-sm text-center text-white">
         Putri ke 5 dari Bapak Ahyar (Alm.) & Ibu Irawati
       </p>
+      <InvitationCountdown targetDate={targetDate} />
     </section>
   );
 };
