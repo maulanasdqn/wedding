@@ -50,7 +50,8 @@ const InvitationRoadmap: FC = (): ReactElement => {
               <p className="text-sm">
                 Dengan penuh keberanian dan bukan tergesa-gesa karena ini
                 merupakan keinginan pihak wanita yang ingin diresmikan sebelum
-                maupun sesudah wisuda dan ahirnya rencana itu pun terwujud
+                maupun sesudah wisuda dan dilakukanlah persiapan dan ahirnya
+                rencana itu pun terwujud
               </p>
             </div>
           </div>
