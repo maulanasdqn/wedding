@@ -20,9 +20,9 @@ const InvitationRoadmap: FC = (): ReactElement => {
             <div className="mt-4 max-w-sm bg-white text-[#800000] p-4 rounded-lg shadow-md relative">
               <h3 className="text-lg font-semibold">Awal Bertemu</h3>
               <p className="text-sm">
-                Untuk teman teman satu kampus , satu jurusan , dan satu kelas
-                kita mungkin menjadi saksi atas perkenalan ,pertemuan dan
-                pendekatan kita
+                Untuk teman teman satu kampus,satu jurusan dan satu kelas kita
+                mungkin menjadi saksi atas perkenalan ,pertemuan dan pendekatan
+                kita
               </p>
             </div>
           </div>
@@ -34,8 +34,9 @@ const InvitationRoadmap: FC = (): ReactElement => {
             <div className="mt-4 max-w-sm bg-white text-[#800000] p-4 rounded-lg shadow-md relative">
               <h3 className="text-lg font-semibold">Mulai Bersama</h3>
               <p className="text-sm">
-                Setalah sekian banyak drama yang terjadi Kami resmi menjadi
-                pasangan. Siapa sangka?
+                Setalah sekian banyak drama yang terjadi (drama perkuliahan yang
+                penuh perkodingan) kami pun dekat dan seiring berjalannya waktu
+                menjadi pasangan. Siapa sangka?
               </p>
             </div>
           </div>
