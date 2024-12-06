@@ -3,10 +3,10 @@ import { FC, ReactElement } from "react";
 const EventDetails: FC = (): ReactElement => {
   return (
     <div
-      className=" flex flex-col h-full min-h-screen gap-16 items-center justify-center bg-cover bg-center text-white px-4"
+      className=" flex flex-col h-full min-h-screen gap-16 items-center justify-center bg-cover bg-center bg-contain text-white px-4"
       style={{ backgroundImage: "url('/bg-flower.png')" }}
     >
-      <div className="bg-white bg-opacity-50 p-8 rounded-lg shadow-lg max-w-4xl">
+      <div className="bg-white bg-opacity-30 w-full p-8 rounded-lg shadow-lg my-4">
         <h1 className="text-4xl font-bold text-[#FFD700] text-center mb-8">
           Detail Acara
         </h1>
