@@ -10,6 +10,7 @@ const InvitationQuotes: FC = (): ReactElement => {
         "Hawa tercipta di dunia untuk menemani sang Adam, begitu juga dirimu
         tercipta tuk temani aku"
       </p>
+      <p className="text-xs text-yellow-500 p-1">"-Dewa19, 2 Sedjoli"</p>
       <img src="/flower.png" width={180} alt="flower" />
       <div className="flex flex-col items-center justify-center gap-y-4 p-2 rounded-md text-yellow-300 text-3xl">
         <div className="flex flex-col items-center justify-center  text-center py-10 px-4">

@@ -1,5 +1,6 @@
 import { type FC, type ReactElement } from "react";
 import { InvitationCountdown } from "./invitation-countdown";
+import { FiHeart } from "react-icons/fi";
 
 export const InvitationView: FC = (): ReactElement => {
   const targetDate = new Date("2024-12-14T00:00:00");
@@ -23,6 +24,20 @@ export const InvitationView: FC = (): ReactElement => {
       <p className="text-sm text-center text-white">
         Putri ke 5 dari Bapak Ahyar (Alm.) & Ibu Irawati
       </p>
+      <div className="flex text-white gap-2">
+        <FiHeart className="text-md " />
+        <FiHeart className="text-md " />
+        <FiHeart className="text-md " />
+        <p className="text-xs text-center">
+          Pesan dari Calon Pengantin : Kami meminta doa restu dari semua. Mohon
+          maaf akan keterbatasan tempat,lokasi dan keterbatasan tamu yang
+          terundang. Terimakasih atas dukungan dan doa-doa dari semua pihak.
+        </p>
+        <FiHeart className="text-md " />
+        <FiHeart className="text-md " />
+        <FiHeart className="text-md " />
+      </div>
+
       <InvitationCountdown targetDate={targetDate} />
     </section>
   );
