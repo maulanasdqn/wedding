@@ -24,11 +24,11 @@ export const InvitationView: FC = (): ReactElement => {
       <p className="text-sm text-center text-white">
         Putri ke 5 dari Bapak Ahyar (Alm.) & Ibu Irawati
       </p>
-      <div className="flex text-white gap-2">
+      <div className="flex bg-white p-1 rounded-md text-red-500 gap-2">
         <FiHeart className="text-md " />
         <FiHeart className="text-md " />
         <FiHeart className="text-md " />
-        <p className="text-xs text-center">
+        <p className="text-sm text-center">
           Pesan dari Calon Pengantin : Kami meminta doa restu dari semua. Mohon
           maaf akan keterbatasan tempat,lokasi dan keterbatasan tamu yang
           terundang. Terimakasih atas dukungan dan doa-doa dari semua pihak.
