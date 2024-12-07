@@ -23,7 +23,8 @@ const InvitationGift: FC = (): ReactElement => {
           <FiCreditCard className="text-4xl text-red-600 mb-4" />
           <h2 className="text-xl font-semibold text-red-600 mb-2">Rekening</h2>
           <p className="text-gray-600 text-center">
-            Kirimkan hadiah terbaik Anda melalui rekening kami.
+            Kirimkan hadiah terbaik Anda melalui rekening kami klik untuk
+            detail.
           </p>
         </div>
 
@@ -36,9 +37,11 @@ const InvitationGift: FC = (): ReactElement => {
         >
           <FiGift className="text-4xl text-red-600 mb-4" />
           <h2 className="text-xl font-semibold text-red-600 mb-2">Kado</h2>
-          <p className="text-gray-600 text-center">
-            Kirimkan kado spesial Anda langsung ke alamat kami.
-          </p>
+          <a href="https://www.tokopedia.com/search?q=hampers+nikahan+kado+wedding&source=universe&st=product&navsource=home&srp_component_id=02.02.01.02">
+            <p className="text-gray-600 text-center">
+              Kirimkan kado spesial Anda langsung ke alamat kami.
+            </p>
+          </a>
         </div>
       </div>
 

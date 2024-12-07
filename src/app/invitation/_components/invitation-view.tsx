@@ -29,9 +29,11 @@ export const InvitationView: FC = (): ReactElement => {
         <FiHeart className="text-md " />
         <FiHeart className="text-md " />
         <p className="text-sm text-center">
-          Pesan dari Calon Pengantin : Kami meminta doa restu dari semua. Mohon
-          maaf akan keterbatasan tempat,lokasi dan keterbatasan tamu yang
-          terundang. Terimakasih atas dukungan dan doa-doa dari semua pihak.
+          Pesan dari Calon Pengantin : Kami memohon maaf karena keterbatasan
+          tempat dan kemampuan, undangan ini hanya kami sampaikan secara
+          terbatas. Kami sangat berharap Bapak/Ibu/ Saudara/i berkenan
+          memberikan restu dan doa untuk kelancaran acara kami. Terima kasih
+          atas doa, restu dan dukungannya.
         </p>
         <FiHeart className="text-md " />
         <FiHeart className="text-md " />
