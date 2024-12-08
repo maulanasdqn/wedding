@@ -1,10 +1,13 @@
 import { useForm, Controller } from "react-hook-form";
 import { FC, Suspense, useState } from "react";
 import { lazily } from "react-lazily";
-import type { TFormInputs, TSubmittedData } from "../_entities/type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schemaInvitation } from "../_entities/schema";
 import { InvitationFormSkeleton } from "../loading";
+import { TReservationRequest } from "../_entities/type";
+import { usePostCreateReservation } from "../_hooks/use-post-create-reservation";
+import { useGetReservations } from "../_hooks/use-get-reservations";
+import { usePostUploadAudio } from "../_hooks/use-post-upload-audio";
 const { Button } = lazily(() => import("@/app/_components/ui/button"));
 const { InputText } = lazily(() => import("@/app/_components/ui/inputs/text"));
 const { TextArea } = lazily(
@@ -19,20 +22,28 @@ export const InvitationForm: FC = () => {
     handleSubmit,
     setValue,
     watch,
-    reset,
     formState: { isValid, errors },
-  } = useForm<TFormInputs>({
+  } = useForm<TReservationRequest>({
     resolver: zodResolver(schemaInvitation),
     mode: "all",
     defaultValues: {
       fullname: "",
-      greeting: "",
-      audio: "",
-      attendence: "",
+      speech: "",
+      speech_audio: "",
+      attendance: "",
     },
   });
 
+  const { data, refetch } = useGetReservations({
+    page: 1,
+    perPage: 100,
+  });
+
   const attendenceOptions = [
+    {
+      value: "",
+      label: "Pilih Kehadiran",
+    },
     {
       value: "true",
       label: "Hadir",
@@ -44,40 +55,35 @@ export const InvitationForm: FC = () => {
     },
   ];
 
-  const [submittedData, setSubmittedData] = useState<TSubmittedData | null>(
-    null,
-  );
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
 
-  const audioValue = watch("audio");
+  const audioValue = watch("speech_audio");
 
   const handleRecordingComplete = (blob: Blob) => {
     const url = URL.createObjectURL(blob);
-    setValue("audio", url, { shouldValidate: true });
+    setValue("speech_audio", url, { shouldValidate: true });
     setAudioBlob(blob);
   };
 
+  const { mutate } = usePostCreateReservation();
+  const { mutate: upload } = usePostUploadAudio();
+
   const onSubmit = handleSubmit((data) => {
-    const formData = new FormData();
-    formData.append("fullname", data.fullname);
-    formData.append("greeting", data.greeting);
-
-    let audioFile: File | null = null;
-    if (audioBlob) {
-      audioFile = new File([audioBlob], "voice-note.webm", {
-        type: "audio/webm",
-      });
-      formData.append("audio", audioFile);
-    }
-
-    setSubmittedData({
-      fullname: data.fullname,
-      greeting: data.greeting,
-      audio: audioFile ? URL.createObjectURL(audioFile) : null,
-      attendence: data.attendence,
+    upload(audioBlob as File, {
+      onSuccess: (res) => {
+        mutate(
+          {
+            ...data,
+            speech_audio: res.file_url,
+          },
+          {
+            onSuccess: () => {
+              refetch();
+            },
+          },
+        );
+      },
     });
-
-    reset({});
   });
 
   return (
@@ -96,22 +102,22 @@ export const InvitationForm: FC = () => {
             label="Nama Lengkap"
           />
           <Select
-            message={errors.attendence?.message}
+            message={errors.attendance?.message}
             options={attendenceOptions}
             control={control}
-            name="attendence"
+            name="attendance"
             label="Kehadiran"
           />
           <TextArea
-            message={errors.greeting?.message}
+            message={errors.speech?.message}
             required
             placeholder="Masukkan Ucapan"
             control={control}
-            name="greeting"
+            name="speech"
             label="Ucapan"
           />
           <Controller
-            name="audio"
+            name="speech_audio"
             control={control}
             render={({ fieldState: { error } }) => (
               <div className="flex flex-col gap-y-1">
@@ -145,24 +151,28 @@ export const InvitationForm: FC = () => {
         </Suspense>
       </form>
 
-      {submittedData && (
-        <div className="mt-6 p-4 border border-gray-300 rounded-md">
-          <h2 className="font-bold text-lg mb-2">
-            {submittedData.attendence === "true"
-              ? `${submittedData.fullname} - Hadir`
-              : `${submittedData.fullname} - Tidak Hadir`}
-          </h2>
-          <p></p>
-          <p>{submittedData.greeting}</p>
-          {submittedData.audio && (
-            <div className="mt-2">
-              <audio controls className="mt-1">
-                <source src={submittedData.audio} type="audio/webm" />
-                Your browser does not support the audio element.
-              </audio>
+      {data && (
+        <>
+          {data?.data?.map((x) => (
+            <div className="mt-6 p-4 border border-gray-300 rounded-md">
+              <h2 className="font-bold text-lg mb-2">
+                {x?.attendance === "true"
+                  ? `${x.fullname} - Hadir`
+                  : `${x.fullname} - Tidak Hadir`}
+              </h2>
+              <p></p>
+              <p>{x.speech}</p>
+              {x.speech_audio && (
+                <div className="mt-2">
+                  <audio controls className="mt-1">
+                    <source src={x.speech_audio} type="audio/webm" />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          ))}
+        </>
       )}
     </section>
   );

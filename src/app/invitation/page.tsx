@@ -21,7 +21,9 @@ export const Component: FC = (): ReactElement => {
       <InvitationView />
       <EventDetails />
       <InvitationGift />
-      <InvitationForm />
+      <div className="w-full px-6 pb-12">
+        <InvitationForm />
+      </div>
       <MobileMenu />
     </Suspense>
   );

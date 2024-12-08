@@ -1,0 +1,10 @@
+import axios, { AxiosRequestConfig } from "axios";
+
+export const apiConfig: AxiosRequestConfig = {
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: {
+    Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+  },
+};
+
+export const api = axios.create(apiConfig);

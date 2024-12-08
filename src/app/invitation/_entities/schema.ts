@@ -9,7 +9,7 @@ export const schemaInvitation = z.object({
       (value) => !badWordRegex.test(value),
       "Kata tersebut tidak diperbolehkan",
     ),
-  greeting: z
+  speech: z
     .string()
     .min(1, "Ucapan harus diisi")
     .min(30, "Ucapan Minimal 30 karakter")
@@ -17,6 +17,6 @@ export const schemaInvitation = z.object({
       (value) => !badWordRegex.test(value),
       "Kata tersebut tidak diperbolehkan",
     ),
-  attendence: z.string().min(1, "Kehadiran harus dipilih"),
-  audio: z.string().optional(),
+  speech_audio: z.string().optional(),
+  attendance: z.string().min(1, "Kehadiran harus dipilih"),
 });

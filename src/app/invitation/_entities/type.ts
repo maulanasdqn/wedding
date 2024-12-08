@@ -1,15 +1,10 @@
-export type TFormInputs = {
-  fullname: string;
-  greeting: string;
-  attendence: string;
-  audio: string;
-};
+import { z } from "zod";
+import { schemaInvitation } from "./schema";
 
-export type TSubmittedData = {
-  fullname: string;
-  greeting: string;
-  attendence: string;
-  audio: string | null;
+export type TReservationRequest = z.infer<typeof schemaInvitation>;
+
+export type TReservationResponse = {
+  data: TReservationRequest[];
 };
 
 export type TCountdownProps = {
